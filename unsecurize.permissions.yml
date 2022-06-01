@@ -1,0 +1,4 @@
+administer unsecurize configuration:
+  title: 'Unsecurize users data configuration'
+  description: ''
+  restrict access: true

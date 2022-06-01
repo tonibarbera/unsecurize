@@ -1,0 +1,6 @@
+unsecurize.settings_form:
+  title: 'Unsecurize'
+  description: 'Configure Unsecurize.'
+  parent: system.admin_config_system
+  route_name: unsecurize.settings_form
+  weight: 10

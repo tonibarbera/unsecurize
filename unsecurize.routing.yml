@@ -1,0 +1,16 @@
+unsecurize.settings_form:
+  path: '/admin/config/system/unsecurize'
+  defaults:
+    _title: 'Unsecurize settings'
+    _form: 'Drupal\unsecurize\Form\SettingsForm'
+  requirements:
+    _permission: 'administer unsecurize configuration'
+
+unsecurize.search:
+  path: '/searchusers/{search}'
+  defaults:
+    _title: 'Users Private Data'
+    _controller: '\Drupal\unsecurize\Controller\UnsecurizeController::search'
+  requirements:
+    _permission: 'access content'
+    search: '^[a-zA-Z0-9@\.]+$'

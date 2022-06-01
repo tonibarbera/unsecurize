@@ -1,0 +1,20 @@
+services:
+  search_users:
+    class: '\Drupal\unsecurize\Service\SearchUsersPrivateData'
+    arguments: ['@config.factory', '@entity_type.manager', '@event_dispatcher']
+  
+  logger.unsecurize:
+    class: '\Drupal\unsecurize\Logger\UnsecurizeLog'
+    tags:
+     - { name: logger }
+
+  unsecurize.commands:
+    class: '\Drupal\unsecurize\Commands\ListUsersCommand'
+    tags:
+      - { name: drush.command }
+
+  unsecurize_events_subscriber:
+    class: '\Drupal\unsecurize\Component\EventSubscriber\UnsecurizeEventsSubscriber'
+    arguments: ['@logger.unsecurize']
+    tags:
+      - { name: 'event_subscriber' }
